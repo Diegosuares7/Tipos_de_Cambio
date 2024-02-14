@@ -5,25 +5,35 @@
   "main": "index.js",
   "scripts": {
     "check-naming-convention": "node ./naming-checker.mjs",
-    "start": "tsc && copyfiles -u  1 src/assets/* dist/assets && node dist/main.js",
+    "start": "tsc && node dist/main.js",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "precommit": "npm run lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "jest --config ./jest.config.js",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.17",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
+    "axios": "^0.26.0",
+    "cheerio": "^1.0.0-rc.12",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.0",
     "husky": "^9.0.10",
+    "jest": "^29.7.0",
     "lint-staged": "^15.2.2",
+    "prettier": "^3.0.0",
+    "ts-jest": "^29.1.2",
     "typescript": "^5.3.3"
   },
   "husky": {
@@ -43,8 +53,5 @@
     "*.json": [
       "prettier --write"
     ]
-  },
-  "dependencies": {
-    "@types/node": "^20.11.16"
   }
 }

@@ -25,8 +25,7 @@
       }
     ],
     "paths": {
-      "@cqrs": ["./src/modules/cqrs/index"],
-      "@logs": ["./src/modules/logs/index"]
+      "@exchange-rate": ["./src/enums/exchange-rate.enum"]
     }
   }
 }
