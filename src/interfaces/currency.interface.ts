@@ -1,7 +1,7 @@
 export interface Currency {
-  date: string;
-  currency: string;
-  currencyTo: string;
-  purchaseValue: string;
-  saleValue: string;
+  currencyCode: string;
+  description: string;
+  exchangeRate: string;
+  exchangeBase: number;
+  validFrom: string;
 }

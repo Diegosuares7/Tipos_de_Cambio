@@ -53,5 +53,8 @@
     "*.json": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "xml-js": "^1.6.11"
   }
 }
