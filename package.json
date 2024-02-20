@@ -55,6 +55,10 @@
     ]
   },
   "dependencies": {
+    "aws-sdk": "^2.1559.0",
+    "dotenv": "^16.4.4",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
     "xml-js": "^1.6.11"
   }
 }

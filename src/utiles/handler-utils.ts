@@ -3,7 +3,7 @@ import * as path from 'path';
 import { CurrencyHandler } from '../interfaces/currency-handler.interface';
 
 type HandlerModule = Record<string, new () => CurrencyHandler>;
-export function getHandlersFromDirectory(directoryPath: string): CurrencyHandler[] {
+export function getHandlersFromDirectory(directoryPath: string, country: string): CurrencyHandler[] {
   const handlers: CurrencyHandler[] = [];
   const files = fs.readdirSync(directoryPath);
 
@@ -12,7 +12,11 @@ export function getHandlersFromDirectory(directoryPath: string): CurrencyHandler
     const stat = fs.statSync(filePath);
 
     if (stat.isDirectory()) {
-      handlers.push(...getHandlersFromDirectory(filePath));
+      const folderName = path.basename(filePath);
+      if (folderName == country) {
+        handlers.push(...getHandlersFromDirectory(filePath, country));
+        return handlers;
+      }
     } else if (filePath.endsWith('.service.js')) {
       const handlerModule: HandlerModule = require(filePath);
       const handlerClass = Object.values(handlerModule)[0];
