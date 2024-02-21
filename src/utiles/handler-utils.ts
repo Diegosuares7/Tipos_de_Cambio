@@ -30,3 +30,11 @@ export function getHandlersFromDirectory(directoryPath: string, country: string)
 
   return handlers;
 }
+
+export function validateEnvVariables(requiredVariables: string[]): void {
+  for (const variable of requiredVariables) {
+    if (!process.env[variable]) {
+      throw new Error(`Variable de entorno '${variable}' no definida.`);
+    }
+  }
+}

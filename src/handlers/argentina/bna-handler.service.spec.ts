@@ -1,4 +1,4 @@
-import { BnaHandlerService } from './bna-handler.service';
+import { BnaHandlerService } from './bna-usd-handler.service';
 
 describe('BnaHandlerService', () => {
   let bnaHandlerService: BnaHandlerService;

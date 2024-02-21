@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import 'dotenv/config';
 import { getDateTimeForNameXml } from '../utiles/get-date';
-import { Currency } from '../interfaces/currency.interface';
+import { validateEnvVariables } from '../utiles/handler-utils';
 
 const configS3 = {
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -16,8 +16,8 @@ const s3 = new AWS.S3();
 
 const bucketName = process.env.AWS_BUCKET_NAME;
 
-export async function uploadFiles(xmlData: Currency[], country: string): Promise<void> {
-  validateEnvVariables();
+export async function uploadFiles(xmlData: string, country: string): Promise<void> {
+  validateEnvVariables(['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'AWS_REGION', 'AWS_BUCKET_NAME']);
   const result = await folderCheckAndCreateFileXml(country, xmlData);
   const existsInS3 = await checkIfFileExistsInS3(bucketName, result.nameFile);
   if (!existsInS3) {
@@ -65,15 +65,6 @@ async function uploadFileToS3(path: string, file: string): Promise<void> {
   } catch (error) {
     console.error('Error al subir el archivo a S3:', error);
     throw new Error(`rror al subir el archivo a S3:`);
-  }
-}
-
-function validateEnvVariables(): void {
-  const requiredVariables = ['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'AWS_REGION', 'AWS_BUCKET_NAME'];
-  for (const variable of requiredVariables) {
-    if (!process.env[variable]) {
-      throw new Error(`Variable de entorno '${variable}' no definida.`);
-    }
   }
 }
 
