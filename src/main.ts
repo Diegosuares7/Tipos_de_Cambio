@@ -25,4 +25,4 @@ async function getCurrencysToParse(handlerFiles, country): Promise<Currency[]> {
   return currencyData;
 }
 
-processCurrencies('argentina');
+processCurrencies('chile');
