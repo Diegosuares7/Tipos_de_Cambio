@@ -10,10 +10,19 @@ describe('BrazilHandlerService', () => {
   it('should return currency data', async () => {
     const currencyData = await brazilHandlerService.getCurrencyData();
 
-    expect(currencyData.currencyCode).toBeDefined();
-    expect(currencyData.description).toBeDefined();
-    expect(currencyData.exchangeRate).toBeDefined();
-    expect(currencyData.exchangeBase).toBeDefined();
-    expect(currencyData.validFrom).toBeDefined();
+    expect(currencyData.success).toBe(true);
+    expect(currencyData.currency).toBeDefined();
+
+    if (currencyData.currency) {
+      const { currencyCode, description, exchangeRate, exchangeBase, validFrom } = currencyData.currency;
+
+      expect(currencyCode).toBeDefined();
+      expect(description).toBeDefined();
+      expect(exchangeRate).toBeDefined();
+      expect(exchangeBase).toBeDefined();
+      expect(validFrom).toBeDefined();
+    } else {
+      fail('Currency data should be defined when success is true.');
+    }
   });
 });

@@ -1,5 +1,5 @@
-import { Currency } from '../interfaces/currency.interface';
+import { CurrencyProcess } from '../interfaces/currency.interface';
 
 export interface CurrencyHandler {
-  getCurrencyData(): Promise<Currency>;
+  getCurrencyData(): Promise<CurrencyProcess>;
 }
