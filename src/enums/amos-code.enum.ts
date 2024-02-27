@@ -1,5 +1,6 @@
 export enum AmosCode {
-  ARGENTINA = 1,
+  DEFAULT = 1,
   BRASIL = 2,
   CHILE = 3,
+  ARGENTINA = 4,
 }

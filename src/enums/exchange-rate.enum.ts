@@ -11,4 +11,5 @@ export enum ExchangeRate {
   REAL_BRASILENO = 'BRL',
   NUEVO_SOL_PERUANO = 'PEN',
   GUARANI_PARAGUAYO = 'PYG',
+  PESO_CHILENO = 'CLP',
 }
