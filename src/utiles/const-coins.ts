@@ -24,7 +24,8 @@ export const ARGENTINA_BCRA_NUEVO_SOL_PERUANO = 'td:contains("Nuevo Sol Peruano"
 export const ARGENTINA_BCRA_PESO_URUGUAYO = 'td:contains("Peso Uruguayo")';
 
 //peru
-export const PERU_SBS_DOLAR_CANADIENSE = 'tr.rgRow td.APLI_fila3:contains("Dólar Canadiense")';
+export const PERU_SBS_DOLAR_CANADIENSE = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__2 td.APLI_fila2';
+export const PERU_SBS_DOLAR = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__0 td:nth-child(2)';
+
 export const PERU_SBS_EURO = 'tr.rgRow td.APLI_fila3:contains("Euro")';
 export const PERU_SBS_LIBRA_ESTERLINA = 'td:contains("Libra Esterlina")';
-export const PERU_SBS_DOLAR = '.APLI_fila3:contains("Dólar de N.A.")';
