@@ -9,3 +9,5 @@ export const ARGENTINA_BCRA_URL = 'https://www.bcra.gob.ar/PublicacionesEstadist
 
 // Peru
 export const PERU_SBS_URL = 'https://www.sbs.gob.pe/app/pp/sistip_portal/paginas/publicacion/tipocambiopromedio.aspx';
+export const PERU_SBS_URL_CONTABLE =
+  'https://www.sbs.gob.pe/app/pp/SISTIP_PORTAL/Paginas/Publicacion/TipoCambioContable.aspx';

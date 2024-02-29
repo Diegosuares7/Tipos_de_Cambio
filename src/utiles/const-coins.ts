@@ -24,8 +24,14 @@ export const ARGENTINA_BCRA_NUEVO_SOL_PERUANO = 'td:contains("Nuevo Sol Peruano"
 export const ARGENTINA_BCRA_PESO_URUGUAYO = 'td:contains("Peso Uruguayo")';
 
 //peru
-export const PERU_SBS_DOLAR_CANADIENSE = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__2 td.APLI_fila2';
-export const PERU_SBS_DOLAR = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__0 td:nth-child(2)';
+export const PERU_SBS_DOLAR_CANADIENSE = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__1 > td:nth-child(1)';
+export const PERU_SBS_DOLAR = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__0 > td:nth-child(1)';
 
-export const PERU_SBS_EURO = 'tr.rgRow td.APLI_fila3:contains("Euro")';
-export const PERU_SBS_LIBRA_ESTERLINA = 'td:contains("Libra Esterlina")';
+export const PERU_SBS_EURO = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__7 > td:nth-child(1)';
+export const PERU_SBS_LIBRA_ESTERLINA = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__3 > td:nth-child(1)';
+
+export const PERU_SBS_PESO_ARGENTINO = '#ctl00_cphContent_rgTipoCambio_ctl00__1 .APLI_fila2';
+export const PERU_SBS_REAL_BRASIL = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__5 > td:nth-child(3)';
+export const PERU_SBS_PESO_CHILENO = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__8 > td:nth-child(3)';
+export const PERU_SBS_PESO_COLOMBIANO = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__11 > td:nth-child(3)';
+export const PERU_SBS_GUARANI_PARAGUAYO = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__31 > td:nth-child(3)';

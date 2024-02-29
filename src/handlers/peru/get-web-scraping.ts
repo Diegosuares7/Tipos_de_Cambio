@@ -85,3 +85,17 @@ export async function getWebScrapingLibraEsterlina(
     throw handleStepError(error, PROCESS_STEPS.SEARCH_COINS);
   }
 }
+
+export async function getWebScrapingContable(
+  url: string,
+  labelSelector: string,
+): Promise<{ value: string; date: string }> {
+  const $ = await fetchData(url);
+  try {
+    const value = $(labelSelector).text().trim();
+    const date = new Date().toISOString().slice(0, 10);
+    return { value, date };
+  } catch (error) {
+    throw handleStepError(error, PROCESS_STEPS.SEARCH_COINS);
+  }
+}
