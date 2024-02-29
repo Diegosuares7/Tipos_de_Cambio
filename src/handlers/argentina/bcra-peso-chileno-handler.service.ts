@@ -12,7 +12,6 @@ export class BcraPesoChileHandlerService implements CurrencyHandler {
   async getCurrencyData(): Promise<CurrencyProcess> {
     try {
       const { value, date } = await getWebScraping(ARGENTINA_BCRA_URL, ARGENTINA_BCRA_PESO_CHILENO);
-
       return {
         success: true,
         currency: {

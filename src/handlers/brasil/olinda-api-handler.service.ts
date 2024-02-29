@@ -6,6 +6,7 @@ import { getCurrentDate } from '../../utiles/get-date';
 import { CountryCode } from '../../enums/country-code.enum';
 import { AmosCode } from '../../enums/amos-code.enum';
 import { handleProcessError } from '../../utiles/handle-process-error';
+import { checkValue } from '../../utiles/check-value';
 
 export class BrazilHandlerService implements CurrencyHandler {
   async getCurrencyData(): Promise<CurrencyProcess> {
@@ -16,6 +17,7 @@ export class BrazilHandlerService implements CurrencyHandler {
       const date = new Date().toISOString().slice(0, 10);
 
       const usDollarSale = response.data?.value[0]?.cotacaoVenda.toString();
+      checkValue(usDollarSale);
 
       return {
         success: true,

@@ -4,6 +4,7 @@ import { FailedFetchUrlException } from './exceptions/faild-fetch-url.exception'
 import { InvalidSelectorException } from './exceptions/invalid-selector.exception';
 import { handleStepError } from '../exceptions/step-error.handler';
 import { PROCESS_STEPS } from '../exceptions/steps.constants';
+import { checkValue } from '../utiles/check-value';
 
 export async function getViaWebScraping(url: string, labelSelector: string): Promise<{ value: string; date: string }> {
   let response;
@@ -24,6 +25,7 @@ export async function getViaWebScraping(url: string, labelSelector: string): Pro
 
     const value = selectedElement.text().trim();
     const date = new Date().toISOString().slice(0, 10);
+    checkValue(value);
 
     return { value, date };
   } catch (error) {

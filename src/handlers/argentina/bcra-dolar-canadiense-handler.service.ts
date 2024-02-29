@@ -12,7 +12,6 @@ export class BcraDolarCanadaHandlerService implements CurrencyHandler {
   async getCurrencyData(): Promise<CurrencyProcess> {
     try {
       const { value, date } = await getWebScraping(ARGENTINA_BCRA_URL, ARGENTINA_BCRA_DOLAR_CANADIENSE);
-
       return {
         success: true,
         currency: {

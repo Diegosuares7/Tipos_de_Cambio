@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio';
 import { handleStepError } from '../../exceptions/step-error.handler';
 import { PROCESS_STEPS } from '../../exceptions/steps.constants';
 import { FailedFetchUrlException } from '../../utiles/exceptions/faild-fetch-url.exception';
+import { checkValue } from '../../utiles/check-value';
 
 type CheerioRoot = ReturnType<typeof cheerio.load>;
 
@@ -52,6 +53,7 @@ export async function getWebScrapingDolarCanadiense(
   try {
     const value = $(labelSelector).next().text().trim();
     const date = new Date().toISOString().slice(0, 10);
+    checkValue(value);
     return { value, date };
   } catch (error) {
     throw handleStepError(error, PROCESS_STEPS.SEARCH_COINS);
@@ -66,6 +68,7 @@ export async function getWebScrapingGeneral(
   try {
     const value = $(labelSelector).next().text().trim();
     const date = new Date().toISOString().slice(0, 10);
+    checkValue(value);
     return { value, date };
   } catch (error) {
     throw handleStepError(error, PROCESS_STEPS.SEARCH_COINS);
@@ -80,6 +83,7 @@ export async function getWebScrapingLibraEsterlina(
   try {
     const value = $(labelSelector).next().text().trim();
     const date = new Date().toISOString().slice(0, 10);
+    checkValue(value);
     return { value, date };
   } catch (error) {
     throw handleStepError(error, PROCESS_STEPS.SEARCH_COINS);

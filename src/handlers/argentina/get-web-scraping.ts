@@ -4,6 +4,7 @@ import { getCurrentDateDDMMYYYY } from '../../utiles/get-date';
 import { handleStepError } from '../../exceptions/step-error.handler';
 import { PROCESS_STEPS } from '../../exceptions/steps.constants';
 import { FailedFetchUrlException } from '../../utiles/exceptions/faild-fetch-url.exception';
+import { checkValue } from '../../utiles/check-value';
 
 export async function getWebScraping(url: string, labelSelector: string): Promise<{ value: string; date: string }> {
   let response;
@@ -27,6 +28,8 @@ export async function getWebScraping(url: string, labelSelector: string): Promis
     const value = $(labelSelector).next().next().text().trim();
 
     const date = new Date().toISOString().slice(0, 10);
+
+    checkValue(value);
 
     return { value, date };
   } catch (error) {
