@@ -98,7 +98,7 @@ async function folderCheckAndCreateFileXml(country, xmlData) {
 
   try {
     const filePath = path.join(assetsFolderPath, nameFile);
-    fs.writeFile(filePath, JSON.stringify(xmlData), (err) => {
+    fs.writeFile(filePath, xmlData, (err) => {
       if (err) throw err;
     });
   } catch (error) {
