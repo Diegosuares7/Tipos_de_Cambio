@@ -35,3 +35,6 @@ export const PERU_SBS_REAL_BRASIL = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__5 >
 export const PERU_SBS_PESO_CHILENO = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__8 > td:nth-child(3)';
 export const PERU_SBS_PESO_COLOMBIANO = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__11 > td:nth-child(3)';
 export const PERU_SBS_GUARANI_PARAGUAYO = 'tr#ctl00_cphContent_rgTipoCambio_ctl00__31 > td:nth-child(3)';
+
+// Irlanda
+export const IRLANDA_ECB_REAL = 'td:contains("Real") + td';

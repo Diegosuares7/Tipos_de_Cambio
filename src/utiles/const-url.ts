@@ -11,3 +11,6 @@ export const ARGENTINA_BCRA_URL = 'https://www.bcra.gob.ar/PublicacionesEstadist
 export const PERU_SBS_URL = 'https://www.sbs.gob.pe/app/pp/sistip_portal/paginas/publicacion/tipocambiopromedio.aspx';
 export const PERU_SBS_URL_CONTABLE =
   'https://www.sbs.gob.pe/app/pp/SISTIP_PORTAL/Paginas/Publicacion/TipoCambioContable.aspx';
+
+export const IRLANDA_ECB_URL =
+  'https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html';

@@ -3,4 +3,5 @@ export enum AmosCode {
   BRASIL = 2,
   CHILE = 3,
   ARGENTINA = 4,
+  IRLANDA = 5,
 }
