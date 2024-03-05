@@ -38,3 +38,16 @@ export const PERU_SBS_GUARANI_PARAGUAYO = 'tr#ctl00_cphContent_rgTipoCambio_ctl0
 
 // Irlanda
 export const IRLANDA_ECB_REAL = 'td:contains("Real") + td';
+
+//colombia
+export const COLOMBIA_BANREP_GENERAL = '.mPTDC.TTHC.mPTLC.PTLC.mTDCBE.ECell.OORT';
+export const COLOMBIA_BANREP_PESO_ARGENTINO = 'td.mPTDC.TTHC.mTDCBE.ECell.OOLT:contains("Peso argentino")';
+export const COLOMBIA_BANREP_REAL_BRASIL = 'td.mPTDC.TTHC.mTDCBE.ECell.OOLT:contains("Real brasileño")';
+export const COLOMBIA_BANREP_DOLAR_CANADIENSE = '.mPTDC:contains("Dólar canadiense")';
+export const COLOMBIA_BANREP_PESO_CHILENO = '.mPTDC:contains("Peso chileno")';
+
+export const COLOMBIA_BANREP_EURO = 'td.mPTDC.TTHC.mTDCBE.ECell.OOLT:contains("Euro")';
+export const COLOMBIA_BANREP_LIBRA_ESTERLINA = 'td.mPTDC.TTHC.mTDCBE.ECell.OOLT:contains("Libra esterlina")';
+export const COLOMBIA_BANREP_PESO_MEXICANO = 'td.mPTDC.TTHC.mTDCBE.ECell.OOLT:contains("MXN")';
+export const COLOMBIA_BANREP_PESO_URUGUAYO = '.mPTDC:contains("Peso uruguayo")';
+export const COLOMBIA_BANREP_DOLAR = '.mPTDC:contains("Dólar estadounidense")';

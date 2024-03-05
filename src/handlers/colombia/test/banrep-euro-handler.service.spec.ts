@@ -1,0 +1,28 @@
+import { BanrepEuroHandlerService } from '../banrep-euro-handler.service';
+
+describe('BanrepEuroHandlerService', () => {
+  let banrepEuroHandlerService: BanrepEuroHandlerService;
+
+  beforeEach(() => {
+    banrepEuroHandlerService = new BanrepEuroHandlerService();
+  });
+
+  it('should return currency data', async () => {
+    const currencyData = await banrepEuroHandlerService.getCurrencyData();
+
+    expect(currencyData.success).toBe(true);
+    expect(currencyData.currency).toBeDefined();
+
+    if (currencyData.currency) {
+      const { currencyCode, description, exchangeRate, exchangeBase, validFrom } = currencyData.currency;
+
+      expect(currencyCode).toBeDefined();
+      expect(description).toBeDefined();
+      expect(exchangeRate).toBeDefined();
+      expect(exchangeBase).toBeDefined();
+      expect(validFrom).toBeDefined();
+    } else {
+      fail('Currency data should be defined when success is true.');
+    }
+  });
+});
