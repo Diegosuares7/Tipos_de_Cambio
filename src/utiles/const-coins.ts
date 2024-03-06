@@ -56,3 +56,17 @@ export const COLOMBIA_BANREP_DOLAR = '.mPTDC:contains("Dólar estadounidense")';
 export const BOLIVIA_BCB = 'tr.listas-fila1';
 export const BOLIVIA_BCB_2 = 'tr.listas-fila2';
 export const BOLIVIA_BCB_DOLAR = 'USD.VENTA';
+
+//Brasil
+export const BRASIL_BCB = 'tr.fundoPadraoBClaro3 td:nth-child(3)';
+export const BRASIL_BCB_DOLAR = '61';
+export const BRASIL_BCB_PESO_ARGENTINO = '156';
+export const BRASIL_BCB_DOLAR_CANADIENSE = '48';
+export const BRASIL_BCB_PESO_CHILENO = '158';
+export const BRASIL_BCB_PESO_COLOMBIANO = '159';
+export const BRASIL_BCB_EURO = '222';
+export const BRASIL_BCB_LIBRA_ESTERLINA = '115';
+export const BRASIL_BCB_PESO_MEXICANO = '165';
+export const BRASIL_BCB_NUEVO_SOL_PERUANO = '147';
+export const BRASIL_BCB_GUARANI_PARAGUAYO = '99';
+export const BRASIL_BCB_PESO_URUGUAYO = '166';

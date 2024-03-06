@@ -22,3 +22,6 @@ export const COLOMBIA_BANREP_URL_COOKIE =
 
 // Bolivia
 export const BOLIVIA_BCB_URL = 'https://www.bcb.gob.bo/librerias/indicadores/otras/ultimo.php';
+
+//brasil
+export const BRASIL_BCB_URL = 'https://ptax.bcb.gov.br/ptax_internet/consultaBoletim.do';

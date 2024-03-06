@@ -1,14 +1,14 @@
-import { BrazilHandlerService } from './olinda-api-handler.service';
+import { BcbPesoMexicanoHandlerService } from '../bcb-peso-mexicano-handler.service';
 
-describe('BrazilHandlerService', () => {
-  let brazilHandlerService: BrazilHandlerService;
+describe('BcbPesoMexicanoHandlerService', () => {
+  let bcbPesoMexicanoHandlerService: BcbPesoMexicanoHandlerService;
 
   beforeEach(() => {
-    brazilHandlerService = new BrazilHandlerService();
+    bcbPesoMexicanoHandlerService = new BcbPesoMexicanoHandlerService();
   });
 
   it('should return currency data', async () => {
-    const currencyData = await brazilHandlerService.getCurrencyData();
+    const currencyData = await bcbPesoMexicanoHandlerService.getCurrencyData();
 
     expect(currencyData.success).toBe(true);
     expect(currencyData.currency).toBeDefined();
