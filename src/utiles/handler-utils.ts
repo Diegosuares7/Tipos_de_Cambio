@@ -4,6 +4,7 @@ import { CurrencyHandler } from '../interfaces/currency-handler.interface';
 import { FaildReadDirectoryException } from './exceptions/faild-read-directory.exception';
 import { handleStepError } from '../exceptions/step-error.handler';
 import { PROCESS_STEPS } from '../exceptions/steps.constants';
+import Logger from '../configurations/config-logs/winston.logs';
 
 type HandlerModule = Record<string, new () => CurrencyHandler>;
 export function getHandlersFromDirectory(directoryPath: string, country: string): CurrencyHandler[] {
@@ -42,7 +43,9 @@ export function getHandlersFromDirectory(directoryPath: string, country: string)
       }
     });
   } catch (error) {
+    Logger.error(`Error: ${PROCESS_STEPS.SEARCH_COINS}:`, error);
     throw handleStepError(error, PROCESS_STEPS.SEARCH_COINS);
   }
+  Logger.info(`Successfull: ${PROCESS_STEPS.SEARCH_COINS} in ${directoryPath}`);
   return handlers;
 }

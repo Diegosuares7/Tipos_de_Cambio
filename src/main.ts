@@ -6,6 +6,7 @@ import { uploadFiles } from './upload-file-s3/upload-files';
 import { createErrorResponse, createSuccesResponse } from './response-handler/create-process-response';
 import { ProcessResponse } from './entities/process-response.entity';
 import { StepProcessHandledException } from './exceptions/step-process-handled.exception';
+import Logger from './configurations/config-logs/winston.logs';
 
 async function processCurrencies(country: string): Promise<ProcessResponse> {
   try {
@@ -14,8 +15,10 @@ async function processCurrencies(country: string): Promise<ProcessResponse> {
     const currencyData = await getCurrencysToParse(handlerFiles, country);
     const xmlData = parseCurrencysToXml(currencyData);
 
+    Logger.info('Successfully execute Tipo de Cambio Integration');
     return createSuccesResponse(xmlData);
   } catch (error) {
+    Logger.error('Error in Tipo de Cambio', error);
     if (error instanceof StepProcessHandledException) {
       return createErrorResponse(error.getErrorMessage());
     }
@@ -37,6 +40,14 @@ async function getCurrencysToParse(handlerFiles, country): Promise<CurrencyHandl
   });
   await Promise.all(promises);
   uploadFiles(currencyData, country);
+
+  if (currencyError.length > 0) {
+    currencyError.forEach((error) => {
+      Logger.error(`Error get currency to parse: ${error.errorMessage} in ${error.handlerName}`);
+    });
+  } else {
+    Logger.info('Successfully get currency to parse');
+  }
 
   return { currency: currencyData, currencyErrorHandler: currencyError };
 }
