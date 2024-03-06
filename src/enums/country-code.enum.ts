@@ -6,4 +6,5 @@ export enum CountryCode {
   PERU = 'PR',
   IRLANDA = 'IE',
   COLOMBIA = 'CO',
+  BOLIVIA = 'BO',
 }

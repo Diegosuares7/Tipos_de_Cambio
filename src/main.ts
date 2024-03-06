@@ -12,8 +12,9 @@ async function processCurrencies(country: string): Promise<ProcessResponse> {
   try {
     const handlerDirectory = path.join(__dirname, './handlers');
     const handlerFiles = getHandlersFromDirectory(handlerDirectory, country);
-    const currencyData = await getCurrencysToParse(handlerFiles, country);
+    const currencyData = await getCurrencysToParse(handlerFiles);
     const xmlData = parseCurrencysToXml(currencyData);
+    uploadFiles(xmlData, country);
 
     Logger.info('Successfully execute Tipo de Cambio Integration');
     return createSuccesResponse(xmlData);
@@ -27,7 +28,7 @@ async function processCurrencies(country: string): Promise<ProcessResponse> {
   }
 }
 
-async function getCurrencysToParse(handlerFiles, country): Promise<CurrencyHandlerResponse> {
+async function getCurrencysToParse(handlerFiles): Promise<CurrencyHandlerResponse> {
   const currencyData: Currency[] = [];
   const currencyError: CurrencyErrorHandler[] = [];
   const promises = handlerFiles.map(async (handler) => {
@@ -39,7 +40,6 @@ async function getCurrencysToParse(handlerFiles, country): Promise<CurrencyHandl
     }
   });
   await Promise.all(promises);
-  uploadFiles(currencyData, country);
 
   if (currencyError.length > 0) {
     currencyError.forEach((error) => {
@@ -52,4 +52,4 @@ async function getCurrencysToParse(handlerFiles, country): Promise<CurrencyHandl
   return { currency: currencyData, currencyErrorHandler: currencyError };
 }
 
-processCurrencies('paraguay');
+processCurrencies('bolivia');

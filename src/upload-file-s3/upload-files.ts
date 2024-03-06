@@ -3,7 +3,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 import 'dotenv/config';
 import { getDateTimeForNameXml } from '../utiles/get-date';
-import { Currency } from '../interfaces/currency.interface';
 
 const configS3 = {
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -16,7 +15,7 @@ const s3 = new AWS.S3();
 
 const bucketName = process.env.AWS_BUCKET_NAME;
 
-export async function uploadFiles(xmlData: Currency[], country: string): Promise<void> {
+export async function uploadFiles(xmlData: string, country: string): Promise<void> {
   validateEnvVariables();
   const result = await folderCheckAndCreateFileXml(country, xmlData);
   const existsInS3 = await checkIfFileExistsInS3(bucketName, result.nameFile);
@@ -77,7 +76,7 @@ function validateEnvVariables(): void {
   }
 }
 
-async function folderCheckAndCreateFileXml(country, xmlData) {
+async function folderCheckAndCreateFileXml(country, xmlData): Promise<{ assetsFolderPath: string; nameFile: string }> {
   const Path = '../assets/';
   const dateHous = getDateTimeForNameXml();
   const nameFile = country + '_' + dateHous + '.xml';

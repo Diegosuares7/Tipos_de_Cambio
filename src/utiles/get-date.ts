@@ -28,3 +28,26 @@ export function getCurrentDateDDMMYYYY(): string {
 
   return `${day}-${month}-${year}`;
 }
+
+export function getYesterdayDateDDMMYYYY(): string {
+  const currentDate = new Date();
+  const yesterdayDate = new Date(currentDate);
+
+  yesterdayDate.setDate(currentDate.getDate() - 1);
+
+  const day = String(yesterdayDate.getDate()).padStart(2, '0');
+  const month = String(yesterdayDate.getMonth() + 1).padStart(2, '0');
+  const year = yesterdayDate.getFullYear();
+
+  return `${day}/${month}/${year}`;
+}
+
+export function getCurrentDateDDMMYYYYformat(): string {
+  const currentDate = new Date();
+
+  const day = String(currentDate.getDate()).padStart(2, '0');
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+  const year = currentDate.getFullYear();
+
+  return `${day}/${month}/${year}`;
+}

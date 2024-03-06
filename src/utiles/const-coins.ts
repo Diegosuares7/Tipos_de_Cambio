@@ -51,3 +51,8 @@ export const COLOMBIA_BANREP_LIBRA_ESTERLINA = 'td.mPTDC.TTHC.mTDCBE.ECell.OOLT:
 export const COLOMBIA_BANREP_PESO_MEXICANO = 'td.mPTDC.TTHC.mTDCBE.ECell.OOLT:contains("MXN")';
 export const COLOMBIA_BANREP_PESO_URUGUAYO = '.mPTDC:contains("Peso uruguayo")';
 export const COLOMBIA_BANREP_DOLAR = '.mPTDC:contains("Dólar estadounidense")';
+
+//Bolivia
+export const BOLIVIA_BCB = 'tr.listas-fila1';
+export const BOLIVIA_BCB_2 = 'tr.listas-fila2';
+export const BOLIVIA_BCB_DOLAR = 'USD.VENTA';

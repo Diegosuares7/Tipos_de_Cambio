@@ -19,3 +19,6 @@ export const IRLANDA_ECB_URL =
 export const COLOMBIA_BANREP_URL = 'https://totoro.banrep.gov.co/analytics/saw.dll?reloadAnalysis';
 export const COLOMBIA_BANREP_URL_COOKIE =
   'https://totoro.banrep.gov.co/analytics/saw.dll?Go&path=%2Fshared%2fSeries%20Estad%c3%adsticas_T%2F1.%20Monedas%20disponibles%2F1.1.TCM_Datos%20diarios&Options=rdf&lang=es&NQUser=publico&NQPassword=publico123';
+
+// Bolivia
+export const BOLIVIA_BCB_URL = 'https://www.bcb.gob.bo/librerias/indicadores/otras/ultimo.php';
